@@ -23,132 +23,79 @@ body {
 /*  */
 /*  */
 
-/*navbar*/
-.navbar a {
-    transition: all .50s ease;
-    text-decoration: none;
-    z-index: 1000;
-}
-
-.navbar a:hover,
-.navbar a.active {
-    color: rgb(43, 151, 59);
-}
-
-.navbar span:active {
-    color: #333;
-}
-
-.hover-underline-animation {
-    position: relative;
-    color: #000000;
-    text-decoration: none;
-}
-
-.hover-underline-animation::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2%;
+    background-color: transparent; /* Set warna background menjadi transparan */
+    position: fixed;
+    top: 0;
     left: 0;
-    background-color: rgb(15, 120, 89);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+    right: 0;
+    z-index: 9999;
+    transition: background-color 0.8s ease-in-out, top 0.8s ease-in-out;
+    color: white; /* Warna teks navbar saat belum discroll */
 }
 
-.hover-underline-animation:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+.navbar.active {
+    background-color: white;
+    /* Add styles for the active state, when scrolled or hovered */
+    color: black; /* Warna teks navbar saat navbar aktif */
 }
 
-/* .navbar{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2%;
-      background-color: rgb(255, 255, 255);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 9999;
-      transition: background-color 0.8s ease-in-out, top 0.8s ease-in-out;
- }
-#navbar.active {
-            background-color: white; /* Warna latar belakang saat navbar aktif */
-/* color: black; Warna teks navbar saat navbar aktif */
-/* } */
+.navbar:hover {
+    background-color: white; /* Warna latar belakang saat navbar di-hover */
+    color: black; /* Warna teks navbar saat navbar di-hover */
+}
 
-/* #navbar:hover { */
-/* background-color: white; Warna latar belakang saat navbar di-hover */
-/* color: black; Warna teks navbar saat navbar di-hover */
-/* } */
+.navbar.active:hover {
+    color: white; /* Warna teks navbar saat navbar aktif dan di-hover */
+}
 
-/* #navbar.active:hover {
-            color: white; /* Warna teks navbar saat navbar aktif dan di-hover */
-/* }  */
+#navbar:not(.active) {
+    color: black; /* Warna teks navbar saat belum aktif dan di-hover */
+}
+  
+  .navbar .logo-navbar{
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+}
+.navbar .logo-navbar span{
+    font-weight: 900;
+    color: rgb(0, 110, 255);
+}
 
-/* #navbar:not(.active) { */
-/* color: black; Warna teks navbar saat belum aktif dan di-hover */
-/* } */
-/*  
- .navbar .logo-navbar{
-      font-size: 2rem;
-      font-weight: 700;
-      color: black;
-      text-align: center;
- }
- .navbar .logo-navbar span{
-      font-weight: 900;
-      color: rgb(0, 110, 255);
- }
- 
- .navbar .navbar-nav a{
-      color: black;
-      display: inline-block;
-      font-size: 1.3rem;
-      margin: 0 3rem;
-      
- }
- .navbar .navbar-nav a:hover{
-	color:  rgb(0, 110, 255);
- }
+.navbar .navbar-nav a{
+    color: black;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 3rem;
+    
+}
+.navbar .navbar-nav a:hover{
+  color:  rgb(0, 110, 255);
+}
 
- .navbar .navbar-nav a::after{
-      content: '';
-      display: block;
-      padding-bottom: 0.5rem;
-      border-bottom: 0.2rem solid   rgb(0, 110, 255);
-      transform: scaleX(0);
-      transition: 0.2s linear;
- }
- .navbar .navbar-nav a:hover::after{
-      transform: scaleX(0.5);
- }
-
- .navbar .barextra a{
-      margin: 0 0.5rem;
-      color: #000;
- }
-
- .navbar .barextra a:hover{
-     color:  rgb(0, 110, 255);
- } */
-
-#humberger,
-#right {
+.navbar .navbar-nav a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid   rgb(0, 110, 255);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+#humberger{
     display: none;
-
 }
-
 /* end navbar */
-
-
-
-/*section background*/
-.hero {
+  
+  .hero{
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -159,36 +106,34 @@ body {
     position: relative;
 }
 
-.hero::after {
+.hero::after{
     content: '';
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
-    /* background: linear-gradient(0deg, rgb(255, 255, 255) 3%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 75%, rgb(255, 255, 255) 97%); */
-
+    background: linear-gradient(0deg, rgb(255, 255, 255) 3%, rgba(255, 255, 255,0)25%);
 }
 
-.hero .content {
+.hero .content{
     padding: 2rem 10% 10rem;
     text-align: center;
 }
 
-.hero .content h3 {
+.hero .content h3{
     font-size: 2rem;
     text-align: center;
     color: white;
-    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-    line-height: 1;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    line-height:1 ;
     font-weight: 300;
 }
-
-.hero .content h1 {
+.hero .content h1{
     font-size: 5rem;
     text-align: center;
     color: white;
-    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-    line-height: 1;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    line-height:1 ;
     font-weight: 900;
 }
 
@@ -572,9 +517,12 @@ body {
 /*renponsive web*/
 
 /*laptop*/
-@media(max-width: 1366px) {
+@media(min-width: 1000px) and (max-width: 1920px) {
     html {
         font-size: 75%;
+    }
+    #hamburger{
+        display: none;
     }
 
 }
@@ -589,15 +537,11 @@ body {
         display: none;
     }
 
-    #humberger,
-    #right {
-        display: inline-flex;
+    #humberger {
+        display: none;
+        color: #000;
     }
 
-    #search,
-    #cart {
-        display: none;
-    }
 
     .navbar .navbar-nav {
         position: absolute;
@@ -653,6 +597,12 @@ body {
     .about .baris .content p {
         font-size: 1.6rem;
     }
+}
+@media(max-width: 767px) {
+#humberger {
+    display: inline-flex;
+    color: #000;
+}
 }
 
 

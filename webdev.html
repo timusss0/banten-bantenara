@@ -13,12 +13,33 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="webdev.css">
 
+    <style>
+         #navbar.active {
+            background-color: white; /* Warna latar belakang saat navbar aktif */
+            color: black; /* Warna teks navbar saat navbar aktif */
+        }
+
+        #navbar:hover {
+            background-color: white; /* Warna latar belakang saat navbar di-hover */
+            color: black; /* Warna teks navbar saat navbar di-hover */
+        }
+
+        #navbar.active:hover {
+            color: white !important; /* Warna teks navbar saat navbar aktif dan di-hover */
+        }
+
+        #navbar:not(.active) {
+            background-color: transparent;
+            color: white !important; /* Warna teks navbar saat belum aktif dan di-hover */
+        }
+    </style>
+
 </head>
 
 <body>
 
     <!--navbar-->
-    <nav id="nav" class="navbar bg-transparent shadow-lg h-[67px] navbar-sticky">
+    <nav id="navbar" class="navbar bg-white shadow-lg h-[67px] navbar-sticky">
         <div class="mx-auto px-4 flex justify-between items-center">
             <div class="hidden md:flex items-center space-x-4">
                 <a href="#" class="text-black font-medium hover:text-gray-300 text-xl mr-4">Budaya</a>
@@ -39,28 +60,15 @@
                     </svg>
                 </button>
             </div>
+            <div class="barextra">
+                <a href="#" id="humberger"><i data-feather="menu"></i>
+                </a>
+    
+            </div>
         </div>
     </nav>
-
-
-    <!-- <nav class="navbar" id="navbar">
-        <a href="#" class="logo-navbar"><img src="/img/logo.png" alt="" width="70px" style="margin: 0%;"></a> -->
-
-    <!-- <div class="navbar-nav">
-                  <a href="#home">Budaya</a>
-                  <a href="#about">Pariwista</a>
-                  <a href="#menu">Makanan</a>
-            </div> -->
-
-    <!-- <div class="barextra">
-            <a href="#" id="humberger"><i data-feather="menu"></i>
-            </a>
-
-        </div>
-
-    </nav> -->
-
-    <!--end navbar-->
+    
+    
 
 
 
@@ -365,6 +373,7 @@
             });
         });
     </script>
+    
 
 </body>
 
