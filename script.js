@@ -11,28 +11,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// navbar efek
+// navbar epek
 var lastScrollTop = 0;
 var navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", function () {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Atur transparansi navbar saat berada di paling atas atau sebelum di-scroll
-  
-
-    // Atur posisi top navbar saat scroll
+    
     if (scrollTop > lastScrollTop) {
-        navbar.style.top = "-80px"; // Sembunyikan navbar saat scroll ke bawah
+        navbar.style.top = "-80px"; 
     } else {
-        navbar.style.top = "0"; // Tampilkan kembali navbar saat scroll ke atas
+        navbar.style.top = "0"; 
     }
 
     lastScrollTop = scrollTop;
 });
 
 
-// end navbar efek
+// end navbar epek
 
 
 
@@ -61,47 +58,29 @@ window.addEventListener("scroll", function () {
 //  end container
 
 
-// carousel
+// slide show
+var slideIndex = 1;
+      showSlides(slideIndex);
 
-let nextDom = document.getElementById('next');
-let prevDom = document.getElementById('prev');
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
 
-let carouselDom = document.querySelector('.carousel');
-let SliderDom = carouselDom.querySelector('.carousel .list');
-let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
-let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
-let timeDom = document.querySelector('.carousel .time');
-
-thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-
-nextDom.onclick = function(){
-    showSlider('next');    
-}
-
-prevDom.onclick = function(){
-    showSlider('prev');    
-}
-
-let runTimeOut;
-
-function showSlider(type){
-    let SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
-    let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
-    
-    if(type === 'next'){
-        SliderDom.appendChild(SliderItemsDom[0]);
-        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-        carouselDom.classList.add('next');
-    } else {
-        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-        carouselDom.classList.add('prev');
-    }
-    
-    clearTimeout(runTimeOut);
-    runTimeOut = setTimeout(() => {
-        carouselDom.classList.remove('next');
-        carouselDom.classList.remove('prev');
-    });
-}
-// end carousel
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        if (n > slides.length)
+        {
+          slideIndex = 1;
+        }
+        if (n < 1)
+        {
+          slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++)
+        {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+      };
+    //   end slideshow

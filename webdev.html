@@ -41,10 +41,13 @@
     <!--navbar-->
     <nav id="navbar" class="navbar bg-white shadow-lg h-[67px] navbar-sticky">
         <div class="mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center" id="logo">
+                <img src="img/logo.png" alt="Bantenara Logo" class="h-[43px] mr-4 w-[60px]">
+            </div>
             <div class="hidden md:flex items-center space-x-4">
                 <a href="#" class="text-black font-medium hover:text-gray-300 text-xl mr-4">Budaya</a>
                 <a href="#" class="text-black font-medium hover:text-gray-300 text-xl mr-4">Pariwisata</a>
-                <div class="flex items-center">
+                <div class="flex items-center" >
                     <img src="img/logo.png" alt="Bantenara Logo" class="h-[43px] mr-4 w-[60px]">
                 </div>
                 <a href="#" class="text-black font-medium hover:text-gray-300 text-xl mr-4">Makanan</a>
@@ -140,7 +143,7 @@
 
     <!-- card -->
 
-    <section class="md:h-full flex items-center text-gray-600" id="menu ">
+    <section class="md:h-full flex items-center text-gray-600" id="menu">
         <div class="container px-5 py-24 mx-auto">
             <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-6xl text-gray-700 font-semibold">Kga tau tulis apaan</h1>
@@ -196,140 +199,53 @@
     </section>
     <!-- end cart -->
 
-
-    <!-- carousel -->
-    <section class="carousel">
-        <!-- list item -->
-        <div class="list">
-            <div class="item">
-                <img src="/img/assets-SawarnaBeach.jpg">
-                <div class="content">
-                    <div class="author">LUNDEV</div>
-                    <div class="title">DESIGN SLIDER</div>
-                    <div class="topic">ANIMAL</div>
-                    <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima
-                        placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et
-                        quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at
-                        laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/img/assets-AnyerBeach.jpg">
-                <div class="content">
-                    <div class="author">LUNDEV</div>
-                    <div class="title">DESIGN SLIDER</div>
-                    <div class="topic">ANIMAL</div>
-                    <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima
-                        placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et
-                        quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at
-                        laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/img/assets-Baduy.jpg">
-                <div class="content">
-                    <div class="author">LUNDEV</div>
-                    <div class="title">DESIGN SLIDER</div>
-                    <div class="topic">ANIMAL</div>
-                    <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima
-                        placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et
-                        quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at
-                        laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/img/bg-index.jpg">
-                <div class="content">
-                    <div class="author">LUNDEV</div>
-                    <div class="title">DESIGN SLIDER</div>
-                    <div class="topic">ANIMAL</div>
-                    <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima
-                        placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et
-                        quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at
-                        laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-
-                    </div>
-                </div>
-            </div>
+    <!-- slideshow -->
+    <div class="slides">
+        <div class="navigation">
+            <a class = "prev" onclick = "plusSlides(-1)">&#10094;</a>
+            <a class = "next" onclick = "plusSlides(1)">&#10095;</a>
+          </div>
+        <div class="slide">
+          <img src="/img/assets-SawarnaBeach.jpg" alt="">
+          <div class="slide-info">
+            <h2>Sawarna Beach</h2>
+            <p>Beautiful beach located in...</p>
         </div>
-        list thumnail
-        <div class="thumbnail">
-            <div class="item">
-                <img src="/img/assets-SawarnaBeach.jpg">
-                <div class="content">
-                    <div class="title">
-                        Name Slider
-                    </div>
-                    <div class="description">
-                        Description
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/img/assets-AnyerBeach.jpg">
-                <div class="content">
-                    <div class="title">
-                        Name Slider
-                    </div>
-                    <div class="description">
-                        Description
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/img/assets-Baduy.jpg">
-                <div class="content">
-                    <div class="title">
-                        Name Slider
-                    </div>
-                    <div class="description">
-                        Description
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/img/bg-index.jpg">
-                <div class="content">
-                    <div class="title">
-                        Name Slider
-                    </div>
-                    <div class="description">
-                        Description
-                    </div>
-                </div>
-            </div>
         </div>
-        <!-- next prev -->
+        <div class="slide">
+          <img src="/img/TANJUNG LESUNG.jpg" alt="">
+          <div class="slide-info">
+            <h2>haha Beach</h2>
+            <p>Beautiful beach located in...</p>
+        </div>
+        </div>
+        <div class="slide">
+          <img src="/img/taman nasional ujunng kulon.jpg" alt="">
+          <div class="slide-info">
+            <h2>hihi Beach</h2>
+            <p>Beautiful beach located in...</p>
+        </div>
+        </div>
+        <div class="slide">
+          <img src="/img/masjid agung.png" alt="">
+          <div class="slide-info">
+            <h2>huhu Beach</h2>
+            <p>Beautiful beach located in...</p>
+        </div>
+        </div>
+        <div class="slide">
+          <img src="/img/assets-Baduy.jpg" alt="">
+          <div class="slide-info">
+            <h2>hehe</h2>
+            <p>Beautiful beach located in...</p>
+        </div>
+        </div>
+      </div>
+      
 
-        <div class="arrows">
-            <button id="prev"></button>
-            <button id="next">></button>
-        </div>
-        <!-- time running -->
-        <div class="time"></div>
-    </section>
-    <!-- end carousel -->
+    <!--end slideshow -->
+
+    <section class="new"></section>
 
 
     <!-- script -->
