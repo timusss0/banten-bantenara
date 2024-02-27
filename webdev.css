@@ -8,6 +8,7 @@
     outline: none;
     border: none;
     text-decoration: none;
+    
 
 }
 
@@ -17,178 +18,126 @@ body {
     color: white;
     min-height: 20000px;
     overflow-x: hidden;
+    background: rgb(255,233,174);
+    background: rgb(25,49,1);
+   
     
 }
 
 /*  */
 /*  */
 
-/*navbar*/
-.navbar a {
-    transition: all .50s ease;
-    text-decoration: none;
-    z-index: 1000;
-}
-
-.navbar a:hover,
-.navbar a.active {
-    color: rgb(43, 151, 59);
-}
-
-.navbar span:active {
-    color: #333;
-}
-
-.hover-underline-animation {
-    position: relative;
-    color: #000000;
-    text-decoration: none;
-}
-
-.hover-underline-animation::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2%;
+    background-color: transparent; /* Set warna background menjadi transparan */
+    position: fixed;
+    top: 0;
     left: 0;
-    background-color: rgb(15, 120, 89);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+    right: 0;
+    z-index: 9999;
+    transition: background-color 0.8s ease-in-out, top 0.8s ease-in-out;
+    color: white; /* Warna teks navbar saat belum discroll */
 }
 
-.hover-underline-animation:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+.navbar.active {
+    background-color: white;
+    /* Add styles for the active state, when scrolled or hovered */
+    color: black; /* Warna teks navbar saat navbar aktif */
 }
 
-/* .navbar{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2%;
-      background-color: rgb(255, 255, 255);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 9999;
-      transition: background-color 0.8s ease-in-out, top 0.8s ease-in-out;
- }
-#navbar.active {
-            background-color: white; /* Warna latar belakang saat navbar aktif */
-/* color: black; Warna teks navbar saat navbar aktif */
-/* } */
+.navbar:hover {
+    background-color: white; /* Warna latar belakang saat navbar di-hover */
+    color: black; /* Warna teks navbar saat navbar di-hover */
+}
 
-/* #navbar:hover { */
-/* background-color: white; Warna latar belakang saat navbar di-hover */
-/* color: black; Warna teks navbar saat navbar di-hover */
-/* } */
+.navbar.active:hover {
+    color: white; /* Warna teks navbar saat navbar aktif dan di-hover */
+}
 
-/* #navbar.active:hover {
-            color: white; /* Warna teks navbar saat navbar aktif dan di-hover */
-/* }  */
+#navbar:not(.active) {
+    color: black; /* Warna teks navbar saat belum aktif dan di-hover */
+}
+  
+  .navbar .logo-navbar{
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+}
+.navbar .logo-navbar span{
+    font-weight: 900;
+    color: rgb(0, 110, 255);
+}
 
-/* #navbar:not(.active) { */
-/* color: black; Warna teks navbar saat belum aktif dan di-hover */
-/* } */
-/*  
- .navbar .logo-navbar{
-      font-size: 2rem;
-      font-weight: 700;
-      color: black;
-      text-align: center;
- }
- .navbar .logo-navbar span{
-      font-weight: 900;
-      color: rgb(0, 110, 255);
- }
- 
- .navbar .navbar-nav a{
-      color: black;
-      display: inline-block;
-      font-size: 1.3rem;
-      margin: 0 3rem;
-      
- }
- .navbar .navbar-nav a:hover{
-	color:  rgb(0, 110, 255);
- }
+.navbar .navbar-nav a{
+    color: black;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 3rem;
+    
+}
+.navbar .navbar-nav a:hover{
+  color:  rgb(0, 110, 255);
+}
 
- .navbar .navbar-nav a::after{
-      content: '';
-      display: block;
-      padding-bottom: 0.5rem;
-      border-bottom: 0.2rem solid   rgb(0, 110, 255);
-      transform: scaleX(0);
-      transition: 0.2s linear;
- }
- .navbar .navbar-nav a:hover::after{
-      transform: scaleX(0.5);
- }
-
- .navbar .barextra a{
-      margin: 0 0.5rem;
-      color: #000;
- }
-
- .navbar .barextra a:hover{
-     color:  rgb(0, 110, 255);
- } */
-
-#humberger,
-#right {
+.navbar .navbar-nav a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid   rgb(0, 110, 255);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+#humberger{
     display: none;
-
 }
-
 /* end navbar */
-
-
-
-/*section background*/
-.hero {
+  
+  .hero{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url(/img/plant.png), url(/img/leaf.png), url(/img/hill5.png), url(/img/hill4.png), url(/img/hill3.png), url(/img/hill2.png), url(/img/hill1.png);
+    background-image: url(/img/indexBG.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
-.hero::after {
+.hero::after{
     content: '';
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
-    /* background: linear-gradient(0deg, rgb(255, 255, 255) 3%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 75%, rgb(255, 255, 255) 97%); */
-
+   
 }
 
-.hero .content {
+.hero .content{
     padding: 2rem 10% 10rem;
     text-align: center;
 }
 
-.hero .content h3 {
+.hero .content h3{
     font-size: 2rem;
     text-align: center;
     color: white;
-    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-    line-height: 1;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    line-height:1 ;
     font-weight: 300;
 }
-
-.hero .content h1 {
+.hero .content h1{
     font-size: 5rem;
     text-align: center;
     color: white;
-    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-    line-height: 1;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    line-height:1 ;
     font-weight: 900;
 }
 
@@ -247,6 +196,8 @@ body {
 .about {
     padding: 8rem 7% 1.4rem;
     color: black;
+    background: rgb(25,49,1);
+background: linear-gradient(180deg, rgba(25,49,1,1) 0%, rgba(168,170,71,1) 60%);
 }
 
 .about h2 {
@@ -291,290 +242,119 @@ body {
 }
 
 /* end about */
-
-/* carousel */
-.carousel {
-    height: 100vh;
-    margin-top: -100px;
-    width: 100vw;
-    overflow: hidden;
-    position: absolute;
-
-
+#menu{
+    background: rgb(168,170,71);
+    background: linear-gradient(180deg, rgba(168,170,71,1) 0%, rgba(117,135,49,1) 60%);
 }
 
-.carousel .list .item {
+/* slide show */
+.slides{
     width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0 0 0 0;
-}
-
-.carousel .list .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    padding-top: 100px;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.carousel .list .item .content {
-    position: absolute;
-    top: 20%;
-    width: 1140px;
-    max-width: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-right: 30%;
-    padding-top: 50px;
-    box-sizing: border-box;
-    color: #fff;
-    text-shadow: 0 5px 10px #0004;
-}
-
-.carousel .list .item .author {
-    font-weight: bold;
-    letter-spacing: 10px;
-}
-
-.carousel .list .item .title,
-.carousel .list .item .topic {
-    font-size: 5em;
-    font-weight: bold;
-    line-height: 1.3em;
-}
-
-.carousel .list .item .topic {
-    color: #f1683a;
-}
-
-.carousel .list .item .buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 130px);
-    grid-template-rows: 40px;
-    gap: 5px;
-    margin-top: 20px;
-}
-
-.carousel .list .item .buttons button {
-    border: none;
-    background-color: #3d3d3d;
-    letter-spacing: 3px;
-    font-family: Poppins;
-    font-weight: 500;
-}
-
-.carousel .list .item .buttons button:nth-child(2) {
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #eee;
-}
-
-/* thumbail */
-.thumbnail {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    width: max-content;
-    z-index: 100;
-    display: none;
-    gap: 20px;
-}
-
-.thumbnail .item {
-    width: 150px;
-    height: 220px;
-    flex-shrink: 0;
     position: relative;
-}
+    height: 50%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+  }
 
-.thumbnail .item img {
+  .slides::before {
+    content: '';
+    position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    
 }
 
-.thumbnail .item .content {
-    color: #fff;
+.slides .slide {
+    display: none;
+    position: relative;
+    z-index: ;
+
+}
+  .slides .slide-info {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-}
-
-.thumbnail .item .content .title {
-    font-weight: 500;
-}
-
-.thumbnail .item .content .description {
-    font-weight: 300;
-}
-
-/* arrows */
-.arrows {
-    position: absolute;
-    top: 80%;
-    right: 52%;
-    z-index: 100;
-    width: 300px;
-    max-width: 30%;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.arrows button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #eee4;
-    border: none;
-    color: #fff;
-    font-family: monospace;
-    font-weight: bold;
-    transition: .5s;
-}
-
-.arrows button:hover {
-    background-color: #fff;
-    color: #000;
-}
-
-/* animation */
-.carousel .list .item:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
     z-index: 1;
 }
 
-/* animation text in first item */
-
-.carousel .list .item:nth-child(1) .content .author,
-.carousel .list .item:nth-child(1) .content .title,
-.carousel .list .item:nth-child(1) .content .topic,
-.carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons {
-    transform: translateY(50px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .3s .5s linear 1 forwards;
+.slides .slide-info h2,
+.slides .slide-info p {
+    margin: 0;
 }
 
-@keyframes showContent {
-    to {
-        transform: translateY(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
-
-/* create animation when next click */
-.carousel.next .list .item:nth-child(1) img {
-    width: 150px;
-    height: 220px;
+  
+  .slides .slide img{
+    width: 100%;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    height: 80vh;
+  }
+  
+  .navigation{
     position: absolute;
-    bottom: 50px;
+    top: 50%;
     left: 50%;
-    border-radius: 30px;
-    animation: showImage .5s linear 1 forwards;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .navigation .prev, .navigation .next{
+    cursor: pointer;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    user-select: none;
+    transition: 0.6s ease;
+    z-index: 1;
+  }
+  
+  .navigation .prev:hover,.navigation .next:hover{
+    background: rgb(168,170,71);
+  }
+  
+  @keyframes fade {
+    from{opacity: 0.3}
+    to {opacity: 1}
+  }
+  #logo{
+    display: none;
+  }
+
+/* end slide show */
+
+.new{
+    background: rgb(117,135,49);
+background: linear-gradient(180deg, rgba(117,135,49,1) 0%, rgba(168,170,71,1) 50%);
 }
-
-@keyframes showImage {
-    to {
-
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
-}
-
-.carousel.next .thumbnail .item:nth-last-child(1) {
-    overflow: hidden;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-
-.carousel.prev .list .item img {
-    z-index: 100;
-}
-
-@keyframes showThumbnail {
-    from {
-        width: 0;
-        opacity: 0;
-    }
-}
-
-.carousel.next .thumbnail {
-    animation: effectNext .5s linear 1 forwards;
-}
-
-@keyframes effectNext {
-    from {
-        transform: translateX(150px);
-    }
-}
-
-
-.carousel.prev .list .item:nth-child(2) {
-    z-index: 2;
-}
-
-.carousel.prev .list .item:nth-child(2) img {
-    animation: outFrame 0.5s linear 1 forwards;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-@keyframes outFrame {
-    to {
-        width: 150px;
-        height: 220px;
-        bottom: 50px;
-        left: 50%;
-        border-radius: 20px;
-    }
-}
-
-.carousel.prev .thumbnail .item:nth-child(1) {
-    overflow: hidden;
-    opacity: 0;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-
-.carousel.next .arrows button,
-.carousel.prev .arrows button {
-    pointer-events: none;
-}
-
-.carousel.prev .list .item:nth-child(2) .content .author,
-.carousel.prev .list .item:nth-child(2) .content .title,
-.carousel.prev .list .item:nth-child(2) .content .topic,
-.carousel.prev .list .item:nth-child(2) .content .des,
-.carousel.prev .list .item:nth-child(2) .content .buttons {
-    animation: contentOut 1.5s linear 1 forwards !important;
-}
-
-@keyframes contentOut {
-    to {
-        transform: translateY(-150px);
-        filter: blur(20px);
-        opacity: 0;
-    }
-}
-
-/* end carousel */
 
 
 
 /*renponsive web*/
 
 /*laptop*/
-@media(max-width: 1366px) {
+@media(min-width: 1000px) and (max-width: 1920px) {
     html {
         font-size: 75%;
+    }
+    .slides .navigation .prev, .slides .navigation .next{
+        font-size: 18px;
+        padding: 13px;
+      }
+    #hamburger{
+        display: none;
     }
 
 }
@@ -589,15 +369,11 @@ body {
         display: none;
     }
 
-    #humberger,
-    #right {
-        display: inline-flex;
+    #humberger {
+        display: none;
+        color: #000;
     }
 
-    #search,
-    #cart {
-        display: none;
-    }
 
     .navbar .navbar-nav {
         position: absolute;
@@ -653,6 +429,31 @@ body {
     .about .baris .content p {
         font-size: 1.6rem;
     }
+    .slides .navigation .prev, .slides .navigation .next{
+        font-size: 15px;
+        padding: 10px;
+      }
+}
+@media(max-width: 767px) {
+#humberger {
+    display: inline-flex;
+    color: #000;
+    /* Penyesuaian posisi untuk hamburger di kanan atas */
+    position: absolute;
+    top: 16px;
+    right: 6%;
+    
+}
+#logo {
+    position: absolute;
+    top: 10px;
+    display: inline-flex;
+    left: 10px;
+  }
+.slides .navigation .prev, .slides .navigation .next{
+    font-size: 12px;
+    padding: 7px;
+  }
 }
 
 
@@ -661,6 +462,10 @@ body {
     html {
         font-size: 55%;
     }
+    .slides .navigation .prev, .slides .navigation .next{
+        font-size: 11px;
+        padding: 6px;
+      }
 
 }
 
