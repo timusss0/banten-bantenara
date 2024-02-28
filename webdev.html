@@ -14,23 +14,29 @@
     <link rel="stylesheet" href="webdev.css">
 
     <style>
-         #navbar.active {
-            background-color: white; /* Warna latar belakang saat navbar aktif */
-            color: black; /* Warna teks navbar saat navbar aktif */
+        #navbar.active {
+            background-color: white;
+            /* Warna latar belakang saat navbar aktif */
+            color: black;
+            /* Warna teks navbar saat navbar aktif */
         }
 
         #navbar:hover {
-            background-color: white; /* Warna latar belakang saat navbar di-hover */
-            color: black; /* Warna teks navbar saat navbar di-hover */
+            background-color: white;
+            /* Warna latar belakang saat navbar di-hover */
+            color: black;
+            /* Warna teks navbar saat navbar di-hover */
         }
 
         #navbar.active:hover {
-            color: white !important; /* Warna teks navbar saat navbar aktif dan di-hover */
+            color: white !important;
+            /* Warna teks navbar saat navbar aktif dan di-hover */
         }
 
         #navbar:not(.active) {
             background-color: transparent;
-            color: white !important; /* Warna teks navbar saat belum aktif dan di-hover */
+            color: white !important;
+            /* Warna teks navbar saat belum aktif dan di-hover */
         }
     </style>
 
@@ -47,7 +53,7 @@
             <div class="hidden md:flex items-center space-x-4">
                 <a href="#" class="text-black font-medium hover:text-gray-300 text-xl mr-4">Budaya</a>
                 <a href="#" class="text-black font-medium hover:text-gray-300 text-xl mr-4">Pariwisata</a>
-                <div class="flex items-center" >
+                <div class="flex items-center">
                     <img src="img/logo.png" alt="Bantenara Logo" class="h-[43px] mr-4 w-[60px]">
                 </div>
                 <a href="#" class="text-black font-medium hover:text-gray-300 text-xl mr-4">Makanan</a>
@@ -66,12 +72,12 @@
             <div class="barextra">
                 <a href="#" id="humberger"><i data-feather="menu"></i>
                 </a>
-    
+
             </div>
         </div>
     </nav>
-    
-    
+
+
 
 
 
@@ -83,11 +89,93 @@
 
         </main>
     </section>
-
     <!--end background-->
 
+
+
+
+    <!-- 3 card for budaya,pariwisata and kuliner -->
+    <div class="container mx-auto p-[40px] m-5">
+        <h2 class="text-2xl text-center p-5">Budaya Pariwisata Kuliner</h2>
+        <div class=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div
+                class="bg-white rounded-t-lg shadow-2xl p-4 w-80 md:w-50 lg:w-100 rounded-lg transition-shadow transform hover:shadow-lg mx-auto">
+                <img src="img/DEBUS.jpg" class="w-[400px] rounded-lg m-1" alt="">
+                <h2 class="text-xl font-semibold">Pencak Silat</h2>
+                <p class="text-gray-600 mb-4">Pencak Silat adalah seni bela diri tradisional yang berasal dari Banten.
+                    Pencak Silat mengajarkan teknik bela diri dan filosofi hidup yang mendalam.</p>
+                <button onclick="order('Frappuccino Green Tea Creme  :Rp 75.000' , 75000)"
+                    class="bg-indigo-500 rounded-md p-2 text-white btn-pesan">Pilih Minuman</button>
+            </div>
+
+            <div
+                class="bg-white rounded-t-lg shadow-2xl p-4 w-80 md:w-50 lg:w-100 rounded-lg transition-shadow transform hover:shadow-lg mx-auto">
+                <img src="img/Sate Bebek dari Cibeber Tanggerang.jpg" class="w-full rounded-lg m-1 " alt="">
+                <h2 class="text-xl font-semibold">Debus</h2>
+                <p class="text-gray-600 mb-4"> Debus adalah pertunjukan seni yang menampilkan kekebalan tubuh terhadap berbagai macam benturan dan sengatan. Pertunjukan Debus ini menjadi bukti kekuatan mental dan fisik orang Banten.
+                </p>
+                <button onclick="order('Vanilla Latte :Rp 50.000' , 50000)"
+                    class="bg-indigo-500 rounded-md p-2  text-white btn-pesan">Pilih Minuman</button>
+            </div>
+
+
+            <div
+                class="bg-white rounded-t-lg shadow-2xl p-4 w-80 md:w-50 lg:w-100 rounded-lg transition-shadow transform hover:shadow-lg mx-auto">
+                <img src="img/dua burung.jgp.jpg" class="w-full rounded-lg m-1" alt="">
+                <h2 class="text-xl font-semibold">Senjata Tradisional:</h2>
+                <p class="text-gray-600 mb-4">  Banten dikenal dengan berbagai macam senjata tradisional seperti keris, golok, dan badik. Senjata-senjata ini menjadi simbol keberanian dan kekuatan orang Banten.
+                </p>
+                <button onclick="order('Americano :Rp 60.000' , 60000)"
+                    class="bg-indigo-500 rounded-md p-2 text-white btn-pesan">Pilih Minuman</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- <section id="teknik" class="mt-[50px]">
+        <h1 class="text-5xl text-center italic font-bold font-serif text-left mt-[0px] mb-[50px]" data-aos="fade-down">
+            <span class="text-amber-800">Teknik </span> Pembuatan Batik
+        </h1>
+        <div class="card_container mb-[150px]">
+            <div class="card mx-[30px]" data-aos="fade-right">
+                <div class="face front">
+                    <img src="img/Sate Bebek dari Cibeber Tanggerang.jpg" alt="">
+                    <h3>Teknik Canting</h3>
+                </div>
+                <div class="face back">
+                    <h3>Canting</h3>
+                    <p>Pada teknik canting, seniman menggunakan alat bernama canting untuk mengaplikasikan lilin panas
+                        secara manual langsung ke kain. Canting memungkinkan pembuatan garis dan pola yang detail.</p>
+                    <div class="link">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mx-[30px]" data-aos="fade-left">
+                <div class="face front">
+                    <img src="img/TANJUNG LESUNG.jpg" alt="">
+                    <h3>Teknik Cetak</h3>
+                </div>
+                <div class="face back">
+                    <h3>Cetak / Cap</h3>
+                    <p>Pada teknik cetak, cetakan atau cap diberi lilin dan ditekan pada kain untuk menambahkan motif.
+                        Lilin melindungi area tertentu dari pewarna, menciptakan pola pada kain. Teknik ini memungkinkan
+                        reproduksi motif dengan efisien.</p>
+                    <div class="link">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- 3 card for budaya,pariwisata and kuliner -->
+
     <!-- container -->
-    <div class="container-panel">
+    <!-- <div class="container-panel">
         <div class="row justify-content-center">
             <div class="col-lg-10 info-panel">
                 <div class="row">
@@ -115,13 +203,13 @@
 
         </div>
 
-    </div>
+    </div> -->
 
     <!-- end container -->
 
     <!--about us -->
     <section class="about" id="about">
-        <h2><span>ISI </span>APAAN</h2>
+        <!-- <h2><span>ISI </span>APAAN</h2>
 
         <div class="baris">
             <div class="img-about">
@@ -137,14 +225,14 @@
                 </p>
 
             </div>
-        </div>
+        </div> -->
     </section>
     <!--end about us -->
 
     <!-- card -->
 
     <section class="md:h-full flex items-center text-gray-600" id="menu">
-        <div class="container px-5 py-24 mx-auto">
+        <!-- <div class="container px-5 py-24 mx-auto">
             <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-6xl text-gray-700 font-semibold">Kga tau tulis apaan</h1>
             </div>
@@ -195,53 +283,53 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
     <!-- end cart -->
 
     <!-- slideshow -->
     <div class="slides">
         <div class="navigation">
-            <a class = "prev" onclick = "plusSlides(-1)">&#10094;</a>
-            <a class = "next" onclick = "plusSlides(1)">&#10095;</a>
-          </div>
-        <div class="slide">
-          <img src="/img/assets-SawarnaBeach.jpg" alt="">
-          <div class="slide-info">
-            <h2>Sawarna Beach</h2>
-            <p>Beautiful beach located in...</p>
-        </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
         <div class="slide">
-          <img src="/img/TANJUNG LESUNG.jpg" alt="">
-          <div class="slide-info">
-            <h2>haha Beach</h2>
-            <p>Beautiful beach located in...</p>
-        </div>
-        </div>
-        <div class="slide">
-          <img src="/img/taman nasional ujunng kulon.jpg" alt="">
-          <div class="slide-info">
-            <h2>hihi Beach</h2>
-            <p>Beautiful beach located in...</p>
-        </div>
+            <img src="/img/assets-SawarnaBeach.jpg" alt="">
+            <div class="slide-info">
+                <h2>Sawarna Beach</h2>
+                <p>Beautiful beach located in...</p>
+            </div>
         </div>
         <div class="slide">
-          <img src="/img/masjid agung.png" alt="">
-          <div class="slide-info">
-            <h2>huhu Beach</h2>
-            <p>Beautiful beach located in...</p>
-        </div>
+            <img src="/img/TANJUNG LESUNG.jpg" alt="">
+            <div class="slide-info">
+                <h2>haha Beach</h2>
+                <p>Beautiful beach located in...</p>
+            </div>
         </div>
         <div class="slide">
-          <img src="/img/assets-Baduy.jpg" alt="">
-          <div class="slide-info">
-            <h2>hehe</h2>
-            <p>Beautiful beach located in...</p>
+            <img src="/img/taman nasional ujunng kulon.jpg" alt="">
+            <div class="slide-info">
+                <h2>hihi Beach</h2>
+                <p>Beautiful beach located in...</p>
+            </div>
         </div>
+        <div class="slide">
+            <img src="/img/masjid agung.png" alt="">
+            <div class="slide-info">
+                <h2>huhu Beach</h2>
+                <p>Beautiful beach located in...</p>
+            </div>
         </div>
-      </div>
-      
+        <div class="slide">
+            <img src="/img/assets-Baduy.jpg" alt="">
+            <div class="slide-info">
+                <h2>hehe</h2>
+                <p>Beautiful beach located in...</p>
+            </div>
+        </div>
+    </div>
+
 
     <!--end slideshow -->
 
@@ -289,7 +377,7 @@
             });
         });
     </script>
-    
+
 
 </body>
 
